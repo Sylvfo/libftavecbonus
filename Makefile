@@ -6,7 +6,7 @@
 #    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/30 10:50:32 by sforster          #+#    #+#              #
-#    Updated: 2023/11/06 17:18:58 by marvin           ###   ########.fr        #
+#    Updated: 2023/11/28 10:30:50 by marvin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,9 @@ SRCS	=	ft_isalpha.c	ft_isdigit.c	ft_isalnum.c\
 			ft_strjoin.c	ft_strtrim.c	ft_split.c	ft_itoa.c\
 			ft_substr.c	ft_strmapi.c	ft_striteri.c	ft_putchar_fd.c\
 			ft_putstr_fd.c	ft_putendl_fd.c	ft_putnbr_fd.c
+SRCS_BONUS = $(SRCS)\
+				ft_lstnew_bonus.c	ft_lstadd_front_bonus.c
+
 NAME	=	libft.a
 
 CC		=	gcc
@@ -26,6 +29,7 @@ CFLAGS	=	-Wall -Wextra -Werror
 RM		=	rm -f
 
 OBJ		=	$(SRCS:.c=.o)
+OBJS_BONUS	= $(SRCS_BONUS:.c=.o)
 
 all:	$(NAME)
 
@@ -35,10 +39,14 @@ $(NAME):	$(OBJ)
 				ar	rcs	$(NAME)	$(OBJ)
 				ranlib $(NAME)
 
+bonus:		$(OBJS_BONUS)
+				ar rcs $(NAME) $(OBJS_BONUS)
+				ranlib $(NAME)
+
 clean:
 			$(RM) $(OBJ)
 
 fclean:		clean
 				$(RM) $(NAME)
 
-.PHONY:		all re clean fclean bin
+.PHONY:		all re clean fclean bin bonus

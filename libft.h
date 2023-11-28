@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sforster <sforster@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 11:06:33 by sforster          #+#    #+#             */
-/*   Updated: 2023/11/07 14:50:41 by sforster         ###   ########.fr       */
+/*   Updated: 2023/11/28 10:23:27 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,5 +105,8 @@ void			ft_putendl_fd(char *s, int fd);
 // comme putstr_fd, mais avec un aller a la ligne
 void			ft_putnbr_fd(int n, int fd);
 // ecrit un nombre int dans le (fd) file descriptor
+//bonus
+t_list			*ft_lstnew(void *content);
+void			ft_lstadd_front(t_list **lst, t_list *new);
 
 #endif
