@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 10:21:44 by sforster          #+#    #+#             */
-/*   Updated: 2023/11/28 10:43:12 by marvin           ###   ########.fr       */
+/*   Updated: 2023/11/28 20:33:52 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	new->next = *lst;
-	*lst = new;
+	if (lst && new)
+	{
+		new->next = *lst;//fait que apres new il y a le pointer de lst
+		*lst = new; //change l adresse du pointer lst avec l adresse de new qui est maintenant le premier
+	}
 }
